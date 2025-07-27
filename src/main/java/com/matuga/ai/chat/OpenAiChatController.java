@@ -2,17 +2,18 @@ package com.matuga.ai.chat;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-public class ChatController {
+public class OpenAiChatController {
 
   private final ChatClient chatClient;
 
-  public ChatController(ChatClient.Builder builder) {
-    this.chatClient = builder.build();
+  public OpenAiChatController(@Qualifier("openAIChatClient") ChatClient chatClient) {
+    this.chatClient = chatClient;
   }
 
   /**
@@ -34,8 +35,7 @@ public class ChatController {
    * will stream its response back in chunks (like 5 places to visit in Delhi). This uses Project
    * Reactor's Flux to return data reactively.
    *
-   * to Run using Git-bash
-   * --> curl http://localhost:8080/stream
+   * <p>to Run using Git-bash --> curl http://localhost:8080/stream
    */
   @GetMapping("/stream")
   public Flux<String> stream() {
@@ -49,9 +49,9 @@ public class ChatController {
   @GetMapping("/joke")
   public ChatResponse joke() {
     return chatClient
-            .prompt() // Start building the prompt
-            .user("tell me a software-engineer joke") // Set the user prompt
-            .call() // Blocking call to fetch the result
-            .chatResponse(); // Returns response with metaData.
+        .prompt() // Start building the prompt
+        .user("tell me a software-engineer joke") // Set the user prompt
+        .call() // Blocking call to fetch the result
+        .chatResponse(); // Returns response with metaData.
   }
 }
