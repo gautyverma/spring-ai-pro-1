@@ -1,3 +1,4 @@
+/*
 package com.matuga.ai.chat;
 
 import org.springframework.ai.chat.client.ChatClient;
@@ -44,3 +45,4 @@ public class AnthropicChatController {
         .chatResponse(); // Returns response with metaData.
   }
 }
+*/

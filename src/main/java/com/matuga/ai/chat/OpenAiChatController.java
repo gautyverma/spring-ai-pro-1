@@ -2,7 +2,6 @@ package com.matuga.ai.chat;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -12,8 +11,14 @@ public class OpenAiChatController {
 
   private final ChatClient chatClient;
 
+  /*
+
   public OpenAiChatController(@Qualifier("openAIChatClient") ChatClient chatClient) {
     this.chatClient = chatClient;
+  }*/
+
+  public OpenAiChatController(ChatClient.Builder builder) {
+    this.chatClient = builder.build();
   }
 
   /**
