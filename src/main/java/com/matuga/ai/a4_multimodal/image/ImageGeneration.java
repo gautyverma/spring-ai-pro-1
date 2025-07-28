@@ -1,9 +1,8 @@
-package com.matuga.ai.a4_multimodal;
+package com.matuga.ai.a4_multimodal.image;
 
 import org.springframework.ai.image.ImageOptions;
 import org.springframework.ai.image.ImagePrompt;
 import org.springframework.ai.image.ImageResponse;
-import org.springframework.ai.model.image.observation.autoconfigure.ImageObservationProperties;
 import org.springframework.ai.openai.OpenAiImageModel;
 import org.springframework.ai.openai.OpenAiImageOptions;
 import org.springframework.http.ResponseEntity;

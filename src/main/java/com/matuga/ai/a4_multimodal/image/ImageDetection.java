@@ -1,4 +1,4 @@
-package com.matuga.ai.a4_multimodal;
+package com.matuga.ai.a4_multimodal.image;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;
