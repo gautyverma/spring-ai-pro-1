@@ -1,4 +1,4 @@
-package com.matuga.ai.chat;
+package com.matuga.ai.a2_prompt;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +17,11 @@ public class FactsController {
   }
 
   @GetMapping(path = "topic/{topicName}")
-  public String getFactTopic(@PathVariable("topicName") String topicName) {
+  public String getFactTopic(@PathVariable(value = "topicName") String topicName) {
     var systemInstruction =
 """
+Fact Generator Guidelines:
+
 Keep it Short & Precise:
 Output should be a single sentence, ideally under 25 words.
 
@@ -45,7 +47,7 @@ Use clear, professional language with correct grammar and punctuation.
         .prompt()
         .user(
             prompt -> {
-              prompt.text("tell some thing about {objectName}");
+              prompt.text("tell few things about {objectName}");
               prompt.param("objectName", topicName);
             })
         .system(systemInstruction)

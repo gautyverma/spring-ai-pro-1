@@ -1,4 +1,4 @@
-package com.matuga.ai.chat;
+package com.matuga.ai.a2_prompt;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.matuga.ai.chat;
+package com.matuga.ai.a1_chat;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
