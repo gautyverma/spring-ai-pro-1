@@ -29,4 +29,18 @@ public class TripPlan {
         .call()
         .content();
   }
+
+  @GetMapping(path = "/plan/structured")
+  public Itinerary planStructured(
+      @RequestParam(value = "place", defaultValue = "kasol") String place) {
+    return chatClient
+        .prompt()
+        .user(
+            plan -> {
+              plan.text("Things to do in {place}");
+              plan.param("place", place);
+            })
+        .call()
+        .entity(Itinerary.class);
+  }
 }
