@@ -27,7 +27,7 @@ public class RagConfiguration {
   @Value("classpath:/data/models.json")
   private Resource models;
   // commenting cause of  Current google-api not able to configure vectorStore so not initializing it.
-  @Bean
+//  @Bean
   SimpleVectorStore simpleVectorStore(EmbeddingModel embeddingModel) {
     var simpleVectorStore = SimpleVectorStore.builder(embeddingModel).build();
     var vectorStoreFile = getVectorStoreFile();
