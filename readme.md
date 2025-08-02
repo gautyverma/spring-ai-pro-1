@@ -9,6 +9,8 @@ MCP server is used for responses.
 ```
 reference for creating MCP server - https://modelcontextprotocol.io/quickstart/server#java
 ```
+## Module - 3
+Spring-AI connection with docker running AI models
 
 
 ---

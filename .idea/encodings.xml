@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/spring-ai-project-1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-io-mcp-stdio-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-local-docker-model/src/main/java" charset="UTF-8" />
   </component>
 </project>
